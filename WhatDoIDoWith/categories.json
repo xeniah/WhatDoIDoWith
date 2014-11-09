@@ -1,0 +1,14 @@
+[
+ {
+    "category_name":"Household Goods",
+    "category_id":1101
+ },
+ {
+    "category_name":"Bedding",
+    "category_id":1102
+ },
+ {
+    "category_name":"Paper",
+    "category_id":1103
+ }
+ ]

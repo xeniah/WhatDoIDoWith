@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="WDIDCategory" representedClassName="WDIDCategory" syncable="YES">
+        <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entityId" attributeType="String" syncable="YES"/>
+        <relationship name="providers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WDIDProvider" inverseName="categories" inverseEntity="WDIDProvider" syncable="YES"/>
+    </entity>
+    <entity name="WDIDProvider" representedClassName="WDIDProvider" syncable="YES">
+        <attribute name="entityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="providerAddress" attributeType="String" syncable="YES"/>
+        <attribute name="providerCity" attributeType="String" syncable="YES"/>
+        <attribute name="providerHours" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="providerName" attributeType="String" syncable="YES"/>
+        <attribute name="providerState" attributeType="String" syncable="YES"/>
+        <attribute name="providerZip" attributeType="String" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WDIDCategory" inverseName="providers" inverseEntity="WDIDCategory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WDIDCategory" positionX="-6131" positionY="-6634" width="128" height="88"/>
+        <element name="WDIDProvider" positionX="-5825" positionY="-6903" width="128" height="163"/>
+    </elements>
+</model>
