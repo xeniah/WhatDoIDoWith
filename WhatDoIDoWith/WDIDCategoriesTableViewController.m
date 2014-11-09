@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Categories";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CategoryCell"];
     
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"categoryName" ascending:YES];

@@ -11,11 +11,12 @@
 		A91A5DDE1A0F2873009D2230 /* WDIDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DDD1A0F2873009D2230 /* WDIDCategory.m */; };
 		A91A5DE11A0F2C23009D2230 /* WDIDProvidersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */; };
 		A91A5DE71A0F4A2B009D2230 /* WDIDProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */; };
+		A91A5DED1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DEC1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m */; };
+		A91A5DF11A0FECE3009D2230 /* WDIDProviderLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */; };
+		A91A5DF41A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */; };
 		A99715371A06F97400A71F17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715361A06F97400A71F17 /* main.m */; };
 		A997153A1A06F97400A71F17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715391A06F97400A71F17 /* AppDelegate.m */; };
 		A997153D1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A997153B1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld */; };
-		A99715401A06F97400A71F17 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A997153F1A06F97400A71F17 /* FirstViewController.m */; };
-		A99715431A06F97400A71F17 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715421A06F97400A71F17 /* SecondViewController.m */; };
 		A99715461A06F97400A71F17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99715441A06F97400A71F17 /* Main.storyboard */; };
 		A99715481A06F97400A71F17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99715471A06F97400A71F17 /* Images.xcassets */; };
 		A997154B1A06F97400A71F17 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99715491A06F97400A71F17 /* LaunchScreen.xib */; };
@@ -43,16 +44,18 @@
 		A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvidersTableViewController.m; sourceTree = "<group>"; };
 		A91A5DE51A0F4A2B009D2230 /* WDIDProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProvider.h; sourceTree = "<group>"; };
 		A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvider.m; sourceTree = "<group>"; };
+		A91A5DEB1A0FDBA1009D2230 /* WDIDProviderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderDetailViewController.h; sourceTree = "<group>"; };
+		A91A5DEC1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProviderDetailViewController.m; sourceTree = "<group>"; };
+		A91A5DEF1A0FECE3009D2230 /* WDIDProviderLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderLocationViewController.h; sourceTree = "<group>"; };
+		A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProviderLocationViewController.m; sourceTree = "<group>"; };
+		A91A5DF21A0FEFC2009D2230 /* WDIDProviderWebPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderWebPageViewController.h; sourceTree = "<group>"; };
+		A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProviderWebPageViewController.m; sourceTree = "<group>"; };
 		A99715311A06F97400A71F17 /* WhatDoIDoWith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDoIDoWith.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99715351A06F97400A71F17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99715361A06F97400A71F17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A99715381A06F97400A71F17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A99715391A06F97400A71F17 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A997153C1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhatDoIDoWith.xcdatamodel; sourceTree = "<group>"; };
-		A997153E1A06F97400A71F17 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		A997153F1A06F97400A71F17 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		A99715411A06F97400A71F17 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		A99715421A06F97400A71F17 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		A99715451A06F97400A71F17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A99715471A06F97400A71F17 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A997154A1A06F97400A71F17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -89,6 +92,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A91A5DEE1A0FDBAC009D2230 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A99715601A06FC9F00A71F17 /* WDIDCategoriesTableViewController.h */,
+				A99715611A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m */,
+				A91A5DDF1A0F2C23009D2230 /* WDIDProvidersTableViewController.h */,
+				A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */,
+				A91A5DEB1A0FDBA1009D2230 /* WDIDProviderDetailViewController.h */,
+				A91A5DEC1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m */,
+				A91A5DEF1A0FECE3009D2230 /* WDIDProviderLocationViewController.h */,
+				A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */,
+				A91A5DF21A0FEFC2009D2230 /* WDIDProviderWebPageViewController.h */,
+				A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		A99715281A06F97400A71F17 = {
 			isa = PBXGroup;
 			children = (
@@ -114,19 +134,12 @@
 			children = (
 				A99715381A06F97400A71F17 /* AppDelegate.h */,
 				A99715391A06F97400A71F17 /* AppDelegate.m */,
-				A997153E1A06F97400A71F17 /* FirstViewController.h */,
-				A997153F1A06F97400A71F17 /* FirstViewController.m */,
-				A99715411A06F97400A71F17 /* SecondViewController.h */,
-				A99715421A06F97400A71F17 /* SecondViewController.m */,
 				A99715441A06F97400A71F17 /* Main.storyboard */,
 				A99715471A06F97400A71F17 /* Images.xcassets */,
 				A99715491A06F97400A71F17 /* LaunchScreen.xib */,
 				A997153B1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld */,
 				A99715341A06F97400A71F17 /* Supporting Files */,
-				A99715601A06FC9F00A71F17 /* WDIDCategoriesTableViewController.h */,
-				A99715611A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m */,
-				A91A5DDF1A0F2C23009D2230 /* WDIDProvidersTableViewController.h */,
-				A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */,
+				A91A5DEE1A0FDBAC009D2230 /* View Controllers */,
 				A99715631A07072600A71F17 /* WDIDClient.h */,
 				A99715641A07072600A71F17 /* WDIDClient.m */,
 				A99715661A070DAB00A71F17 /* JSONUtils.h */,
@@ -318,17 +331,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99715431A06F97400A71F17 /* SecondViewController.m in Sources */,
 				A91A5DE71A0F4A2B009D2230 /* WDIDProvider.m in Sources */,
 				A91A5DDE1A0F2873009D2230 /* WDIDCategory.m in Sources */,
+				A91A5DED1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m in Sources */,
 				A99715681A070DAB00A71F17 /* JSONUtils.m in Sources */,
 				A997153A1A06F97400A71F17 /* AppDelegate.m in Sources */,
 				A997153D1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld in Sources */,
 				A99715621A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m in Sources */,
+				A91A5DF41A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m in Sources */,
 				A91A5DE11A0F2C23009D2230 /* WDIDProvidersTableViewController.m in Sources */,
 				A99715651A07072600A71F17 /* WDIDClient.m in Sources */,
+				A91A5DF11A0FECE3009D2230 /* WDIDProviderLocationViewController.m in Sources */,
 				A99715371A06F97400A71F17 /* main.m in Sources */,
-				A99715401A06F97400A71F17 /* FirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WhatDoIDoWith/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -463,6 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WhatDoIDoWith/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
