@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSArray *wdidProviders;
 @property (nonatomic, strong) NSArray *wdidCategories;
 @property (nonatomic, strong) WDIDCategory *selectedCategory;
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) NSMutableArray *searchResults;
 @end
 
 @implementation WDIDCategoriesTableViewController
@@ -26,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CategoryCell"];
-   
+    
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"categoryName" ascending:YES];
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     self.wdidCategories = [delegate fetchMultiple:WDIDCATEGORY_TYPE withPredicate:nil withSort:sort];
@@ -39,10 +41,13 @@
             self.wdidCategories = [delegate fetchMultiple:WDIDCATEGORY_TYPE withPredicate:nil withSort:sort];
             [self.tableView reloadData];
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [self setupSearch];
             
         } failureWithResponse:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@", error.localizedDescription);
         }];
+    }else{
+        [self setupSearch];
     }
 }
 
@@ -60,17 +65,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.wdidCategories.count;
+    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+        return [self.searchResults count];
+    } else {
+        return self.wdidCategories.count;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell" forIndexPath:indexPath];
     
-    WDIDCategory *wdidCategory = (WDIDCategory *)self.wdidCategories[indexPath.row];
+    WDIDCategory *wdidCategory;
+    
+    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+        wdidCategory = [self.searchResults objectAtIndex:indexPath.row];
+    } else {
+        wdidCategory = (WDIDCategory *)self.wdidCategories[indexPath.row];
+    }
+    
     self.selectedCategory = wdidCategory;
     cell.textLabel.text = wdidCategory.categoryName;
-    
+
     return cell;
 }
 
@@ -90,11 +106,58 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     WDIDProvidersTableViewController *providerController = [segue destinationViewController];
     providerController.providers = [self.selectedCategory.providers allObjects];
 }
+
+#pragma mark - UISearchResultsUpdating
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    NSString *searchString = [self.searchController.searchBar text];
+    [self updateFilteredContentForCategory:searchString];
+    [((UITableViewController *)self.searchController.searchResultsController).tableView reloadData];
+}
+
+
+#pragma mark - Content Filtering
+- (void)updateFilteredContentForCategory:(NSString *)categoryName {
+    
+    if ((categoryName == nil) || [categoryName length] == 0) {
+        self.searchResults = [self.wdidCategories mutableCopy];
+        return;
+    }
+    
+    [self.searchResults removeAllObjects]; // First clear the filtered array.
+    
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"categoryName contains[c] %@", categoryName];
+    self.searchResults = [[self.wdidCategories filteredArrayUsingPredicate:resultPredicate] mutableCopy];
+}
+
+
+#pragma mark - Helpers & Utilities
+- (void) setupSearch
+{
+    self.searchResults = [NSMutableArray arrayWithCapacity:[self.wdidCategories count]];
+    
+    UITableViewController *searchResultsController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    searchResultsController.tableView.dataSource = self;
+    searchResultsController.tableView.delegate = self;
+    [searchResultsController.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CategoryCell"];
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
+    
+    self.searchController.searchResultsUpdater = self;
+    
+    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    self.definesPresentationContext = YES;
+}
+
+
 
 
 @end

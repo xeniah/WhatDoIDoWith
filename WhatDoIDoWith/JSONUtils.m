@@ -45,7 +45,11 @@ static JSONUtils *_sharedUtils = nil;
         wdidProvider.providerFee = [self value:provider forIndex:22];
         wdidProvider.providerServiceDescription = [self value:provider forIndex:17];
         wdidProvider.providerRestrictions = [self value:provider forIndex:18];
-        wdidProvider.providerURL = [self value:provider forIndex:29];
+        NSArray *providerURI = provider[29];
+        if(providerURI && providerURI.count > 0)
+        {
+            wdidProvider.providerURL = [self value:providerURI forIndex:0];;
+        }
         
         NSString *m = provider[16];
         NSArray *materials = [m componentsSeparatedByString:@", "];

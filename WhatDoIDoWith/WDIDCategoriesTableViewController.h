@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WDIDCategoriesTableViewController : UITableViewController
+@interface WDIDCategoriesTableViewController : UITableViewController<UISearchControllerDelegate, UISearchResultsUpdating>
 
 @end
