@@ -7,6 +7,7 @@
 //
 
 #import "WDIDProviderWebPageViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface WDIDProviderWebPageViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -18,35 +19,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.delegate = self;
+    NSURL* nsUrl = [NSURL URLWithString:self.pageURLStr];
+    NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:20];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.webView loadRequest:request];
 }
 
 - (void)viewDidLayoutSubviews
 {
-    NSURL* nsUrl = [NSURL URLWithString:self.pageURLStr];
-    NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:20];
-    
-    [self.webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (id)initWithURLStr:(NSString *)urlStr
+#pragma mark - UIWebViewDelegate methods
+- (void)webViewDidFinishLoad:(UIWebView *)aWebView
 {
-    if(self = [super init])
-    {
-        self.pageURLStr = urlStr;
-    }
-    return self;
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
-#pragma mark - UIWebViewDelegate methods
-- (void)webViewDidFinishLoad:(UIWebView *)thisWebView
+- (void)webView:(UIWebView *)aWebView didFailLoadWithError:(NSError *)error
 {
-    NSString *yourHTMLSourceCodeString = [self.webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
-    
-    NSLog(@"%@",yourHTMLSourceCodeString);
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    //ToDO
 }
 
 

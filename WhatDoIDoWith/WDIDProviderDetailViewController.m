@@ -73,7 +73,11 @@
     {
 //        NSURL *url = [ [ NSURL alloc ] initWithString:self.provider.providerURL];
 //        [[UIApplication sharedApplication] openURL:url];
-        WDIDProviderWebPageViewController *webPageController = [[WDIDProviderWebPageViewController alloc]initWithURLStr:self.provider.providerURL];
+//        WDIDProviderWebPageViewController *webPageController = [[WDIDProviderWebPageViewController alloc]initWithURLStr:self.provider.providerURL];
+        UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        WDIDProviderWebPageViewController* webPageController = [sb instantiateViewControllerWithIdentifier:@"WDIDProviderWebPageViewController"];
+        webPageController.pageURLStr = self.provider.providerURL;
+      //  WDIDProviderWebPageViewController *webPageController = [[WDIDProviderWebPageViewController alloc]init];
         [self.navigationController pushViewController:webPageController animated:YES];
         
     }else

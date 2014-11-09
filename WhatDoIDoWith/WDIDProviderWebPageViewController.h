@@ -10,5 +10,4 @@
 
 @interface WDIDProviderWebPageViewController : UIViewController<UIWebViewDelegate>
 @property   (nonatomic, strong) NSString *pageURLStr;
-- (id)initWithURLStr:(NSString *)urlStr;
 @end
