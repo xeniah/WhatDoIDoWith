@@ -9,14 +9,19 @@
         <attribute name="entityId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="providerAddress" attributeType="String" syncable="YES"/>
         <attribute name="providerCity" attributeType="String" syncable="YES"/>
+        <attribute name="providerFee" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="providerHours" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="providerName" attributeType="String" syncable="YES"/>
+        <attribute name="providerPhoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="providerRestrictions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="providerServiceDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="providerState" attributeType="String" syncable="YES"/>
+        <attribute name="providerURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="providerZip" attributeType="String" syncable="YES"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WDIDCategory" inverseName="providers" inverseEntity="WDIDCategory" syncable="YES"/>
     </entity>
     <elements>
         <element name="WDIDCategory" positionX="-6131" positionY="-6634" width="128" height="88"/>
-        <element name="WDIDProvider" positionX="-5825" positionY="-6903" width="128" height="163"/>
+        <element name="WDIDProvider" positionX="-5825" positionY="-6912" width="128" height="238"/>
     </elements>
 </model>

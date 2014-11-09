@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		214E9A53428543FA8A64094D /* libPods-WhatDoIDoWith.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE3ABF2FEC5D4F76880C4E9A /* libPods-WhatDoIDoWith.a */; };
-		A91A5DDB1A0F2872009D2230 /* WDIDProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DDA1A0F2872009D2230 /* WDIDProvider.m */; };
 		A91A5DDE1A0F2873009D2230 /* WDIDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DDD1A0F2873009D2230 /* WDIDCategory.m */; };
 		A91A5DE11A0F2C23009D2230 /* WDIDProvidersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */; };
+		A91A5DE71A0F4A2B009D2230 /* WDIDProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */; };
 		A99715371A06F97400A71F17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715361A06F97400A71F17 /* main.m */; };
 		A997153A1A06F97400A71F17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715391A06F97400A71F17 /* AppDelegate.m */; };
 		A997153D1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A997153B1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld */; };
@@ -37,12 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A91A5DD91A0F2872009D2230 /* WDIDProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProvider.h; sourceTree = "<group>"; };
-		A91A5DDA1A0F2872009D2230 /* WDIDProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvider.m; sourceTree = "<group>"; };
 		A91A5DDC1A0F2873009D2230 /* WDIDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDCategory.h; sourceTree = "<group>"; };
 		A91A5DDD1A0F2873009D2230 /* WDIDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDCategory.m; sourceTree = "<group>"; };
 		A91A5DDF1A0F2C23009D2230 /* WDIDProvidersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProvidersTableViewController.h; sourceTree = "<group>"; };
 		A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvidersTableViewController.m; sourceTree = "<group>"; };
+		A91A5DE51A0F4A2B009D2230 /* WDIDProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProvider.h; sourceTree = "<group>"; };
+		A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvider.m; sourceTree = "<group>"; };
 		A99715311A06F97400A71F17 /* WhatDoIDoWith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDoIDoWith.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99715351A06F97400A71F17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99715361A06F97400A71F17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,8 +168,8 @@
 			children = (
 				A91A5DDC1A0F2873009D2230 /* WDIDCategory.h */,
 				A91A5DDD1A0F2873009D2230 /* WDIDCategory.m */,
-				A91A5DD91A0F2872009D2230 /* WDIDProvider.h */,
-				A91A5DDA1A0F2872009D2230 /* WDIDProvider.m */,
+				A91A5DE51A0F4A2B009D2230 /* WDIDProvider.h */,
+				A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -319,11 +319,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99715431A06F97400A71F17 /* SecondViewController.m in Sources */,
+				A91A5DE71A0F4A2B009D2230 /* WDIDProvider.m in Sources */,
 				A91A5DDE1A0F2873009D2230 /* WDIDCategory.m in Sources */,
 				A99715681A070DAB00A71F17 /* JSONUtils.m in Sources */,
 				A997153A1A06F97400A71F17 /* AppDelegate.m in Sources */,
 				A997153D1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld in Sources */,
-				A91A5DDB1A0F2872009D2230 /* WDIDProvider.m in Sources */,
 				A99715621A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m in Sources */,
 				A91A5DE11A0F2C23009D2230 /* WDIDProvidersTableViewController.m in Sources */,
 				A99715651A07072600A71F17 /* WDIDClient.m in Sources */,

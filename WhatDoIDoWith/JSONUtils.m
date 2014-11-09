@@ -35,12 +35,17 @@ static JSONUtils *_sharedUtils = nil;
         NSString *providerId = provider[8];
         WDIDProvider * wdidProvider = [delegate fetch:WDIDPROVIDER_TYPE orCreate:YES withEntityId:providerId];
         
-        wdidProvider.providerAddress = (provider[10] != (id)[NSNull null])? provider[10] : @"";;
-        wdidProvider.providerName = (provider[9] != (id)[NSNull null])? provider[9] : @"";;
-        wdidProvider.providerCity = (provider[11] != (id)[NSNull null])? provider[11] : @"";
+        wdidProvider.providerAddress = [self value:provider forIndex:10];
+        wdidProvider.providerName = [self value:provider forIndex:9];
+        wdidProvider.providerCity = [self value:provider forIndex:11];
         wdidProvider.providerState = @"WA";
-        wdidProvider.providerZip =(provider[12] != (id)[NSNull null])? provider[12] : @"";
-        wdidProvider.providerHours = (provider[15] != (id)[NSNull null])? provider[15] : @"";
+        wdidProvider.providerZip = [self value:provider forIndex:12];
+        wdidProvider.providerHours = [self value:provider forIndex:15];
+        
+        wdidProvider.providerFee = [self value:provider forIndex:22];
+        wdidProvider.providerServiceDescription = [self value:provider forIndex:17];
+        wdidProvider.providerRestrictions = [self value:provider forIndex:18];
+        wdidProvider.providerURL = [self value:provider forIndex:29];
         
         NSString *m = provider[16];
         NSArray *materials = [m componentsSeparatedByString:@", "];
@@ -80,4 +85,10 @@ static JSONUtils *_sharedUtils = nil;
     }
 }
  */
+
+#pragma mark helpers
+- (NSString *)value:(NSArray *)provider forIndex:(int)index
+{
+    return (provider[index] != (id)[NSNull null])? provider[index] : @"";
+}
 @end
