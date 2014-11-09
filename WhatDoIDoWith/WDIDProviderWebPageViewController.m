@@ -21,12 +21,8 @@
     self.webView.delegate = self;
     NSURL* nsUrl = [NSURL URLWithString:self.pageURLStr];
     NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:20];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.webView animated:YES];
     [self.webView loadRequest:request];
-}
-
-- (void)viewDidLayoutSubviews
-{
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,12 +32,12 @@
 #pragma mark - UIWebViewDelegate methods
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView
 {
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [MBProgressHUD hideAllHUDsForView:self.webView animated:YES];
 }
 
 - (void)webView:(UIWebView *)aWebView didFailLoadWithError:(NSError *)error
 {
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [MBProgressHUD hideAllHUDsForView:self.webView animated:YES];
     //ToDO
 }
 

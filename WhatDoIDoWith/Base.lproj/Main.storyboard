@@ -105,14 +105,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-pb-fxk">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-pb-fxk">
                                 <rect key="frame" x="-16" y="0.0" width="616" height="600"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.79215686269999996" green="0.79215686269999996" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Iqh-pb-fxk" firstAttribute="leading" secondItem="uvE-JM-0hX" secondAttribute="leading" id="CLa-qL-oRb"/>
+                            <constraint firstAttribute="trailing" secondItem="Iqh-pb-fxk" secondAttribute="trailing" id="FES-Lp-fRl"/>
+                            <constraint firstItem="Iqh-pb-fxk" firstAttribute="leading" secondItem="uvE-JM-0hX" secondAttribute="leading" id="IRR-gC-7e6"/>
                             <constraint firstItem="Iqh-pb-fxk" firstAttribute="top" secondItem="uvE-JM-0hX" secondAttribute="top" id="pwf-Ky-i4o"/>
                             <constraint firstAttribute="bottom" secondItem="Iqh-pb-fxk" secondAttribute="bottom" id="y08-if-rT9"/>
                         </constraints>
