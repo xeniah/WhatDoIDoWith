@@ -48,7 +48,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedProvider = self.providers[indexPath.row];
-    WDIDProviderDetailViewController *detail = [[WDIDProviderDetailViewController alloc] initWithProvider:self.selectedProvider];
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WDIDProviderDetailViewController* detail = [sb instantiateViewControllerWithIdentifier:@"WDIDProviderDetailViewController"];
+    detail.provider = self.selectedProvider;
     [self.navigationController pushViewController:detail animated:YES];
 }
 

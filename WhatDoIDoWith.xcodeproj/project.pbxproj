@@ -25,6 +25,8 @@
 		A99715651A07072600A71F17 /* WDIDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715641A07072600A71F17 /* WDIDClient.m */; };
 		A99715681A070DAB00A71F17 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715671A070DAB00A71F17 /* JSONUtils.m */; };
 		A997156A1A070FFD00A71F17 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = A99715691A070FFD00A71F17 /* categories.json */; };
+		A9F825DF1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F825DE1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m */; };
+		A9F825E21A11C96200E6AC5E /* UIView+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F825E11A11C96200E6AC5E /* UIView+Resize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,10 @@
 		A99715661A070DAB00A71F17 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		A99715671A070DAB00A71F17 /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		A99715691A070FFD00A71F17 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		A9F825DD1A11BCA000E6AC5E /* ProviderDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderDetailTableViewCell.h; sourceTree = "<group>"; };
+		A9F825DE1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderDetailTableViewCell.m; sourceTree = "<group>"; };
+		A9F825E01A11C96200E6AC5E /* UIView+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Resize.h"; sourceTree = "<group>"; };
+		A9F825E11A11C96200E6AC5E /* UIView+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Resize.m"; sourceTree = "<group>"; };
 		E70F024A7BC14B23BB4CF54D /* Pods-WhatDoIDoWith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatDoIDoWith.xcconfig"; path = "Pods/Pods-WhatDoIDoWith.xcconfig"; sourceTree = "<group>"; };
 		EE3ABF2FEC5D4F76880C4E9A /* libPods-WhatDoIDoWith.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhatDoIDoWith.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +111,8 @@
 				A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */,
 				A91A5DF21A0FEFC2009D2230 /* WDIDProviderWebPageViewController.h */,
 				A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */,
+				A9F825DD1A11BCA000E6AC5E /* ProviderDetailTableViewCell.h */,
+				A9F825DE1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -136,7 +144,7 @@
 				A99715391A06F97400A71F17 /* AppDelegate.m */,
 				A99715441A06F97400A71F17 /* Main.storyboard */,
 				A99715471A06F97400A71F17 /* Images.xcassets */,
-				A99715491A06F97400A71F17 /* LaunchScreen.xib */,
+				A9F825DC1A11B01000E6AC5E /* Nibs */,
 				A997153B1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld */,
 				A99715341A06F97400A71F17 /* Supporting Files */,
 				A91A5DEE1A0FDBAC009D2230 /* View Controllers */,
@@ -145,6 +153,8 @@
 				A99715661A070DAB00A71F17 /* JSONUtils.h */,
 				A99715671A070DAB00A71F17 /* JSONUtils.m */,
 				A99715711A07157A00A71F17 /* Models */,
+				A9F825E01A11C96200E6AC5E /* UIView+Resize.h */,
+				A9F825E11A11C96200E6AC5E /* UIView+Resize.m */,
 			);
 			path = WhatDoIDoWith;
 			sourceTree = "<group>";
@@ -185,6 +195,14 @@
 				A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A9F825DC1A11B01000E6AC5E /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				A99715491A06F97400A71F17 /* LaunchScreen.xib */,
+			);
+			name = Nibs;
 			sourceTree = "<group>";
 		};
 		BCEDC5DA51CA4FAFBD3EE5AB /* Frameworks */ = {
@@ -331,11 +349,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F825E21A11C96200E6AC5E /* UIView+Resize.m in Sources */,
 				A91A5DE71A0F4A2B009D2230 /* WDIDProvider.m in Sources */,
 				A91A5DDE1A0F2873009D2230 /* WDIDCategory.m in Sources */,
 				A91A5DED1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m in Sources */,
 				A99715681A070DAB00A71F17 /* JSONUtils.m in Sources */,
 				A997153A1A06F97400A71F17 /* AppDelegate.m in Sources */,
+				A9F825DF1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m in Sources */,
 				A997153D1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld in Sources */,
 				A99715621A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m in Sources */,
 				A91A5DF41A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m in Sources */,
@@ -465,10 +485,13 @@
 			baseConfigurationReference = E70F024A7BC14B23BB4CF54D /* Pods-WhatDoIDoWith.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xenia H (6V66P8P47Y)";
 				INFOPLIST_FILE = WhatDoIDoWith/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d3f010d1-eb0e-4000-96d9-bb733c1597b9";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -481,6 +504,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d3f010d1-eb0e-4000-96d9-bb733c1597b9";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

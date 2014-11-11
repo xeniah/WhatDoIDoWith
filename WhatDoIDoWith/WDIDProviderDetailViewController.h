@@ -11,6 +11,4 @@
 
 @interface WDIDProviderDetailViewController : UITableViewController
 @property (nonatomic, strong) WDIDProvider *provider;
-
-- (instancetype) initWithProvider:(WDIDProvider *)aProvider;
 @end

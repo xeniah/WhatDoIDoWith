@@ -7,38 +7,47 @@
 //
 
 #import "WDIDProviderDetailViewController.h"
+#import "ProviderDetailTableViewCell.h"
 #import "WDIDProviderWebPageViewController.h"
+#import "UIView+Resize.h"
 
 @interface WDIDProviderDetailViewController ()
-//@property (weak, nonatomic) IBOutlet UIView *tableViewHeader;
+@property (weak, nonatomic) IBOutlet UIView *tableViewHeader;
 @property (nonatomic, strong) NSArray *providerDetailTitles;
+@property (weak, nonatomic) IBOutlet UILabel *providerNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *providerServiceDescriptionLabel;
 
 @end
 
-@implementation WDIDProviderDetailViewController
 
-- (instancetype)initWithProvider:(WDIDProvider *)aProvider
-{
-    {
-        if(self = [super init])
-        {
-            self.provider = aProvider;
-            self.providerDetailTitles = @[@"Name", @"Address", @"City", @"Zipcode", @"Description", @"Restrictions", @"Fee", @"View On Map", @"Go to Webpage"];
-        }
-    }
-    
-    return self;
-}
+#define HOURS_INDEX             0
+#define ADDRESS_INDEX           1
+#define CITY_INDEX              2
+#define ZIPCODE_INDEX           3
+#define DESCRIPTION_INDEX       4
+#define RESTRICTIONS_INDEX      5
+#define FEE_INDEX               6
+#define VIEW_ON_MAP_INDEX       7
+#define WEBPAGE_INDEX           8
+
+
+@implementation WDIDProviderDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = self.provider.providerName;
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"providerDetailCell"]; // TODO
+    self.title = self.provider.providerName;
+    self.providerDetailTitles = @[@"Hours", @"Address", @"City", @"Zipcode", @"Description", @"Restrictions", @"Fee", @"View On Map", @"Go to Webpage"];
+    self.providerNameLabel.text = self.provider.providerName;
+    self.providerServiceDescriptionLabel.text = self.provider.providerServiceDescription;
+   
+    [UIView animateWithDuration:0.35 animations:^{
+         [self.providerServiceDescriptionLabel sizeToFit];
+         [self.tableViewHeader resizeToFitSubviews];
+     }];
+    self.tableView.tableHeaderView = self.tableViewHeader;
+   
+   // [self.tableView registerClass:[ProviderDetailTableViewCell class] forCellReuseIdentifier:@"providerDetailCell"]; // TODO
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,9 +68,40 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"providerDetailCell" forIndexPath:indexPath];
+    ProviderDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"providerDetailCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.providerDetailTitles[indexPath.row];
+    //cell.textLabel.text = self.providerDetailTitles[indexPath.row];
+    cell.titleLabel.text = self.providerDetailTitles[indexPath.row];
+    NSString *infoText;
+   
+    switch (indexPath.row) {
+            case HOURS_INDEX:
+            infoText = self.provider.providerHours;
+            break;
+            case ADDRESS_INDEX:
+            infoText = self.provider.providerAddress;
+            break;
+            case CITY_INDEX:
+            infoText = self.provider.providerCity;
+            break;
+            case ZIPCODE_INDEX:
+            infoText = self.provider.providerZip;
+            break;
+            case DESCRIPTION_INDEX:
+            infoText = self.provider.providerHours;
+            break;
+            case RESTRICTIONS_INDEX:
+            infoText = self.provider.providerRestrictions;
+            break;
+            case FEE_INDEX:
+            infoText = self.provider.providerFee;
+            break;
+      
+        default:
+            infoText = @"";
+            break;
+    }
+    cell.infoLabel.text = infoText;
 
     return cell;
 }
@@ -71,13 +111,9 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(indexPath.row == 8 && self.provider.providerURL!= nil && self.provider.providerURL.length > 0) // TODO
     {
-//        NSURL *url = [ [ NSURL alloc ] initWithString:self.provider.providerURL];
-//        [[UIApplication sharedApplication] openURL:url];
-//        WDIDProviderWebPageViewController *webPageController = [[WDIDProviderWebPageViewController alloc]initWithURLStr:self.provider.providerURL];
         UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         WDIDProviderWebPageViewController* webPageController = [sb instantiateViewControllerWithIdentifier:@"WDIDProviderWebPageViewController"];
         webPageController.pageURLStr = self.provider.providerURL;
-      //  WDIDProviderWebPageViewController *webPageController = [[WDIDProviderWebPageViewController alloc]init];
         [self.navigationController pushViewController:webPageController animated:YES];
         
     }else
@@ -86,49 +122,7 @@
     }
 }
 
+#pragma - mark Helpers
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

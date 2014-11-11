@@ -22,6 +22,7 @@
     NSURL* nsUrl = [NSURL URLWithString:self.pageURLStr];
     NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:20];
     [MBProgressHUD showHUDAddedTo:self.webView animated:YES];
+    self.webView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.webView loadRequest:request];
 }
 
