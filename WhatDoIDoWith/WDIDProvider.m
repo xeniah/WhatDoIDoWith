@@ -2,7 +2,7 @@
 //  WDIDProvider.m
 //  WhatDoIDoWith
 //
-//  Created by Pugetworks on 11/8/14.
+//  Created by Pugetworks on 11/11/14.
 //  Copyright (c) 2014 xeniah. All rights reserved.
 //
 
@@ -15,15 +15,17 @@
 @dynamic entityId;
 @dynamic providerAddress;
 @dynamic providerCity;
+@dynamic providerFee;
 @dynamic providerHours;
 @dynamic providerName;
-@dynamic providerState;
-@dynamic providerZip;
-@dynamic providerServiceDescription;
-@dynamic providerRestrictions;
-@dynamic providerFee;
-@dynamic providerURL;
 @dynamic providerPhoneNumber;
+@dynamic providerRestrictions;
+@dynamic providerServiceDescription;
+@dynamic providerState;
+@dynamic providerURL;
+@dynamic providerZip;
+@dynamic longitude;
+@dynamic latitude;
 @dynamic categories;
 
 @end

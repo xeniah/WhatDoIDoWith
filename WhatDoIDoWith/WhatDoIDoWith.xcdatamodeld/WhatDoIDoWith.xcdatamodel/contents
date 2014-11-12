@@ -7,6 +7,8 @@
     </entity>
     <entity name="WDIDProvider" representedClassName="WDIDProvider" syncable="YES">
         <attribute name="entityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="providerAddress" attributeType="String" syncable="YES"/>
         <attribute name="providerCity" attributeType="String" syncable="YES"/>
         <attribute name="providerFee" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,6 +24,6 @@
     </entity>
     <elements>
         <element name="WDIDCategory" positionX="-6131" positionY="-6634" width="128" height="88"/>
-        <element name="WDIDProvider" positionX="-5825" positionY="-6912" width="128" height="238"/>
+        <element name="WDIDProvider" positionX="-5825" positionY="-6912" width="128" height="268"/>
     </elements>
 </model>

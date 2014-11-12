@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Categories Table View Controller-->
+        <!--What Do I Do With?-->
         <scene sceneID="opb-Bl-go9">
             <objects>
                 <tableViewController id="c2r-Ij-xE4" customClass="WDIDCategoriesTableViewController" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="c2r-Ij-xE4" id="Lg7-5p-TIK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xBc-kX-Y1T"/>
+                    <navigationItem key="navigationItem" title="What Do I Do With?" id="uXb-ve-IEW"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="4pS-uE-INS" id="RLq-Vb-1Pf"/>
                     </connections>
@@ -70,6 +70,8 @@
                             <outlet property="delegate" destination="MAw-J3-U8U" id="nD5-mn-aWJ"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kx3-Nq-3vr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,6 +128,60 @@
             </objects>
             <point key="canvasLocation" x="3962" y="856"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Mtf-Dv-3uh">
+            <objects>
+                <viewController storyboardIdentifier="WDIDMapViewController" id="VBG-Tx-Xtd" customClass="WDIDMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uvR-X8-s7m"/>
+                        <viewControllerLayoutGuide type="bottom" id="7U5-gu-jTv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0xO-V8-fRf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OLN-Gd-IAC">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OLN-Gd-IAC" secondAttribute="bottom" id="D6l-5Q-b6e"/>
+                            <constraint firstItem="OLN-Gd-IAC" firstAttribute="top" secondItem="0xO-V8-fRf" secondAttribute="top" id="Gxq-CG-j8i"/>
+                            <constraint firstItem="OLN-Gd-IAC" firstAttribute="leading" secondItem="0xO-V8-fRf" secondAttribute="leading" id="HAL-DQ-KD1"/>
+                            <constraint firstAttribute="trailing" secondItem="OLN-Gd-IAC" secondAttribute="trailing" id="iEX-8P-SzC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OLN-Gd-IAC"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="D6l-5Q-b6e"/>
+                                <exclude reference="Gxq-CG-j8i"/>
+                                <exclude reference="HAL-DQ-KD1"/>
+                                <exclude reference="iEX-8P-SzC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OLN-Gd-IAC"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="D6l-5Q-b6e"/>
+                                <include reference="Gxq-CG-j8i"/>
+                                <include reference="HAL-DQ-KD1"/>
+                                <include reference="iEX-8P-SzC"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="OLN-Gd-IAC" id="Uje-3H-WCk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K53-z9-xg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2130" y="341"/>
+        </scene>
         <!--Provider Detail View Controller-->
         <scene sceneID="nm9-e4-PT4">
             <objects>
@@ -165,7 +221,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="ProviderDetailTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="providerDetailCell" id="1nk-2z-DjB" customClass="ProviderDetailTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="ProviderDetailTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="providerDetailCell" id="1nk-2z-DjB" customClass="WDIDProviderDetailTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1nk-2z-DjB" id="ADq-MB-uzC">
                                     <autoresizingMask key="autoresizingMask"/>

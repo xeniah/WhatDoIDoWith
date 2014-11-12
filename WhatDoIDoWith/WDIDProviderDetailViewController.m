@@ -7,7 +7,7 @@
 //
 
 #import "WDIDProviderDetailViewController.h"
-#import "ProviderDetailTableViewCell.h"
+#import "WDIDProviderDetailTableViewCell.h"
 #import "WDIDProviderWebPageViewController.h"
 #import "UIView+Resize.h"
 
@@ -68,7 +68,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProviderDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"providerDetailCell" forIndexPath:indexPath];
+    WDIDProviderDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"providerDetailCell" forIndexPath:indexPath];
     
     //cell.textLabel.text = self.providerDetailTitles[indexPath.row];
     cell.titleLabel.text = self.providerDetailTitles[indexPath.row];

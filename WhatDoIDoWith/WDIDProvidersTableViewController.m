@@ -8,8 +8,10 @@
 
 #import "WDIDProvidersTableViewController.h"
 #import "WDIDProviderDetailViewController.h"
+#import "WDIDMapViewController.h"
 #import "WDIDProvider.h"
 @interface WDIDProvidersTableViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *showMapButton;
 @property (nonatomic, strong) WDIDProvider *selectedProvider;
 @end
 
@@ -18,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Providers";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:@selector(showMapButtonClicked:)];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"providerCell"]; //TODO
 }
 
@@ -54,5 +57,12 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
+- (IBAction)showMapButtonClicked:(id)sender {
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WDIDMapViewController* mapController = [sb instantiateViewControllerWithIdentifier:@"WDIDMapViewController"];
+    mapController.providers = self.providers;
+    [self.navigationController pushViewController:mapController animated:YES];
+
+}
 
 @end

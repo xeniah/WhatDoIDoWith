@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 xeniah. All rights reserved.
 //
 
-#import "ProviderDetailTableViewCell.h"
+#import "WDIDProviderDetailTableViewCell.h"
 
-@implementation ProviderDetailTableViewCell
+@implementation WDIDProviderDetailTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

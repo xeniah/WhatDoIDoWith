@@ -2,7 +2,7 @@
 //  WDIDProvider.h
 //  WhatDoIDoWith
 //
-//  Created by Pugetworks on 11/8/14.
+//  Created by Pugetworks on 11/11/14.
 //  Copyright (c) 2014 xeniah. All rights reserved.
 //
 
@@ -16,15 +16,17 @@
 @property (nonatomic, retain) NSString * entityId;
 @property (nonatomic, retain) NSString * providerAddress;
 @property (nonatomic, retain) NSString * providerCity;
+@property (nonatomic, retain) NSString * providerFee;
 @property (nonatomic, retain) NSString * providerHours;
 @property (nonatomic, retain) NSString * providerName;
-@property (nonatomic, retain) NSString * providerState;
-@property (nonatomic, retain) NSString * providerZip;
-@property (nonatomic, retain) NSString * providerServiceDescription;
-@property (nonatomic, retain) NSString * providerRestrictions;
-@property (nonatomic, retain) NSString * providerFee;
-@property (nonatomic, retain) NSString * providerURL;
 @property (nonatomic, retain) NSString * providerPhoneNumber;
+@property (nonatomic, retain) NSString * providerRestrictions;
+@property (nonatomic, retain) NSString * providerServiceDescription;
+@property (nonatomic, retain) NSString * providerState;
+@property (nonatomic, retain) NSString * providerURL;
+@property (nonatomic, retain) NSString * providerZip;
+@property (nonatomic, retain) NSNumber * longitude;
+@property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSSet *categories;
 @end
 

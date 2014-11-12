@@ -60,6 +60,14 @@ static JSONUtils *_sharedUtils = nil;
             [wdidProvider addCategoriesObject:wdidCategory];
         }
         
+        NSArray *geoAddress = provider[31];
+        if(geoAddress && geoAddress.count > 2)
+        {
+            double latitude = (geoAddress[1] != (id)[NSNull null])? [geoAddress[1] doubleValue]:0;
+            double longitude = (geoAddress[2] != (id)[NSNull null])?[geoAddress[2] doubleValue]:0;
+            wdidProvider.latitude = [NSNumber numberWithDouble:latitude];
+            wdidProvider.longitude = [NSNumber numberWithDouble:longitude];
+        }
     }
     
     [delegate saveContext];

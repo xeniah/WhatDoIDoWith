@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProviderDetailTableViewCell : UITableViewCell
+@interface WDIDProviderDetailTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 

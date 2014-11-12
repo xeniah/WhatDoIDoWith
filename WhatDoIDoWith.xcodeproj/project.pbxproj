@@ -10,7 +10,6 @@
 		214E9A53428543FA8A64094D /* libPods-WhatDoIDoWith.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE3ABF2FEC5D4F76880C4E9A /* libPods-WhatDoIDoWith.a */; };
 		A91A5DDE1A0F2873009D2230 /* WDIDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DDD1A0F2873009D2230 /* WDIDCategory.m */; };
 		A91A5DE11A0F2C23009D2230 /* WDIDProvidersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */; };
-		A91A5DE71A0F4A2B009D2230 /* WDIDProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */; };
 		A91A5DED1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DEC1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m */; };
 		A91A5DF11A0FECE3009D2230 /* WDIDProviderLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */; };
 		A91A5DF41A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */; };
@@ -25,7 +24,10 @@
 		A99715651A07072600A71F17 /* WDIDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715641A07072600A71F17 /* WDIDClient.m */; };
 		A99715681A070DAB00A71F17 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715671A070DAB00A71F17 /* JSONUtils.m */; };
 		A997156A1A070FFD00A71F17 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = A99715691A070FFD00A71F17 /* categories.json */; };
-		A9F825DF1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F825DE1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m */; };
+		A9C8D2EC1A13084000224CAC /* WDIDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D2EB1A13084000224CAC /* WDIDMapViewController.m */; };
+		A9C8D2EE1A1308D300224CAC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D2ED1A1308D300224CAC /* MapKit.framework */; };
+		A9C8D2F11A1309E200224CAC /* WDIDProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D2F01A1309E200224CAC /* WDIDProvider.m */; };
+		A9F825DF1A11BCA000E6AC5E /* WDIDProviderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F825DE1A11BCA000E6AC5E /* WDIDProviderDetailTableViewCell.m */; };
 		A9F825E21A11C96200E6AC5E /* UIView+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F825E11A11C96200E6AC5E /* UIView+Resize.m */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +46,6 @@
 		A91A5DDD1A0F2873009D2230 /* WDIDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDCategory.m; sourceTree = "<group>"; };
 		A91A5DDF1A0F2C23009D2230 /* WDIDProvidersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProvidersTableViewController.h; sourceTree = "<group>"; };
 		A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvidersTableViewController.m; sourceTree = "<group>"; };
-		A91A5DE51A0F4A2B009D2230 /* WDIDProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProvider.h; sourceTree = "<group>"; };
-		A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvider.m; sourceTree = "<group>"; };
 		A91A5DEB1A0FDBA1009D2230 /* WDIDProviderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderDetailViewController.h; sourceTree = "<group>"; };
 		A91A5DEC1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProviderDetailViewController.m; sourceTree = "<group>"; };
 		A91A5DEF1A0FECE3009D2230 /* WDIDProviderLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderLocationViewController.h; sourceTree = "<group>"; };
@@ -71,8 +71,13 @@
 		A99715661A070DAB00A71F17 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		A99715671A070DAB00A71F17 /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		A99715691A070FFD00A71F17 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
-		A9F825DD1A11BCA000E6AC5E /* ProviderDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderDetailTableViewCell.h; sourceTree = "<group>"; };
-		A9F825DE1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderDetailTableViewCell.m; sourceTree = "<group>"; };
+		A9C8D2EA1A13084000224CAC /* WDIDMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDMapViewController.h; sourceTree = "<group>"; };
+		A9C8D2EB1A13084000224CAC /* WDIDMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDMapViewController.m; sourceTree = "<group>"; };
+		A9C8D2ED1A1308D300224CAC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A9C8D2EF1A1309E200224CAC /* WDIDProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProvider.h; sourceTree = "<group>"; };
+		A9C8D2F01A1309E200224CAC /* WDIDProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvider.m; sourceTree = "<group>"; };
+		A9F825DD1A11BCA000E6AC5E /* WDIDProviderDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderDetailTableViewCell.h; sourceTree = "<group>"; };
+		A9F825DE1A11BCA000E6AC5E /* WDIDProviderDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProviderDetailTableViewCell.m; sourceTree = "<group>"; };
 		A9F825E01A11C96200E6AC5E /* UIView+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Resize.h"; sourceTree = "<group>"; };
 		A9F825E11A11C96200E6AC5E /* UIView+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Resize.m"; sourceTree = "<group>"; };
 		E70F024A7BC14B23BB4CF54D /* Pods-WhatDoIDoWith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatDoIDoWith.xcconfig"; path = "Pods/Pods-WhatDoIDoWith.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C8D2EE1A1308D300224CAC /* MapKit.framework in Frameworks */,
 				214E9A53428543FA8A64094D /* libPods-WhatDoIDoWith.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +107,8 @@
 		A91A5DEE1A0FDBAC009D2230 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A9C8D2EA1A13084000224CAC /* WDIDMapViewController.h */,
+				A9C8D2EB1A13084000224CAC /* WDIDMapViewController.m */,
 				A99715601A06FC9F00A71F17 /* WDIDCategoriesTableViewController.h */,
 				A99715611A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m */,
 				A91A5DDF1A0F2C23009D2230 /* WDIDProvidersTableViewController.h */,
@@ -111,8 +119,8 @@
 				A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */,
 				A91A5DF21A0FEFC2009D2230 /* WDIDProviderWebPageViewController.h */,
 				A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */,
-				A9F825DD1A11BCA000E6AC5E /* ProviderDetailTableViewCell.h */,
-				A9F825DE1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m */,
+				A9F825DD1A11BCA000E6AC5E /* WDIDProviderDetailTableViewCell.h */,
+				A9F825DE1A11BCA000E6AC5E /* WDIDProviderDetailTableViewCell.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -191,8 +199,8 @@
 			children = (
 				A91A5DDC1A0F2873009D2230 /* WDIDCategory.h */,
 				A91A5DDD1A0F2873009D2230 /* WDIDCategory.m */,
-				A91A5DE51A0F4A2B009D2230 /* WDIDProvider.h */,
-				A91A5DE61A0F4A2B009D2230 /* WDIDProvider.m */,
+				A9C8D2EF1A1309E200224CAC /* WDIDProvider.h */,
+				A9C8D2F01A1309E200224CAC /* WDIDProvider.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 		BCEDC5DA51CA4FAFBD3EE5AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9C8D2ED1A1308D300224CAC /* MapKit.framework */,
 				EE3ABF2FEC5D4F76880C4E9A /* libPods-WhatDoIDoWith.a */,
 			);
 			name = Frameworks;
@@ -350,12 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F825E21A11C96200E6AC5E /* UIView+Resize.m in Sources */,
-				A91A5DE71A0F4A2B009D2230 /* WDIDProvider.m in Sources */,
 				A91A5DDE1A0F2873009D2230 /* WDIDCategory.m in Sources */,
 				A91A5DED1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m in Sources */,
 				A99715681A070DAB00A71F17 /* JSONUtils.m in Sources */,
+				A9C8D2F11A1309E200224CAC /* WDIDProvider.m in Sources */,
 				A997153A1A06F97400A71F17 /* AppDelegate.m in Sources */,
-				A9F825DF1A11BCA000E6AC5E /* ProviderDetailTableViewCell.m in Sources */,
+				A9F825DF1A11BCA000E6AC5E /* WDIDProviderDetailTableViewCell.m in Sources */,
 				A997153D1A06F97400A71F17 /* WhatDoIDoWith.xcdatamodeld in Sources */,
 				A99715621A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m in Sources */,
 				A91A5DF41A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m in Sources */,
@@ -363,6 +372,7 @@
 				A99715651A07072600A71F17 /* WDIDClient.m in Sources */,
 				A91A5DF11A0FECE3009D2230 /* WDIDProviderLocationViewController.m in Sources */,
 				A99715371A06F97400A71F17 /* main.m in Sources */,
+				A9C8D2EC1A13084000224CAC /* WDIDMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

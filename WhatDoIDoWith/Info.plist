@@ -30,6 +30,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Show available providers on the map relative to your current location.</string>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key>UINavigationBar</key>
