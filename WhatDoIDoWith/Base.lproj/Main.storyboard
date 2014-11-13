@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--What Do I Do With?-->
@@ -194,23 +195,27 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saA-L9-IZu">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="saA-L9-IZu">
                                     <rect key="frame" x="0.0" y="2" width="600" height="26"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
+                                    <variation key="widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="5" y="0.0" width="390" height="52.5"/>
+                                    </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Service Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-e5-FuY">
                                     <rect key="frame" x="140" y="31" width="320" height="42"/>
-                                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
+                                    <variation key="widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="5" y="47" width="390" height="27"/>
+                                    </variation>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.56078433990478516" green="0.91764712333679199" blue="0.70588237047195435" alpha="1" colorSpace="deviceRGB"/>
                             <constraints>
-                                <constraint firstItem="saA-L9-IZu" firstAttribute="top" secondItem="AfZ-8z-2uJ" secondAttribute="top" constant="2" id="Ad1-GH-BB5"/>
+                                <constraint firstItem="saA-L9-IZu" firstAttribute="top" secondItem="AfZ-8z-2uJ" secondAttribute="top" constant="4" id="Ad1-GH-BB5"/>
                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uwk-e5-FuY" secondAttribute="bottom" id="HXX-fY-ME7"/>
                                 <constraint firstAttribute="trailing" secondItem="uwk-e5-FuY" secondAttribute="trailing" constant="5" id="RHB-fS-l8Y"/>
                                 <constraint firstItem="uwk-e5-FuY" firstAttribute="top" secondItem="saA-L9-IZu" secondAttribute="bottom" constant="4" id="WZy-x8-pXS"/>
@@ -228,11 +233,26 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a25-C5-hfn">
                                             <rect key="frame" x="26" y="11" width="117" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="117" id="M7C-XE-CiQ">
+                                                    <variation key="widthClass=compact" constant="152"/>
+                                                </constraint>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="M7C-XE-CiQ"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="M7C-XE-CiQ"/>
+                                                </mask>
+                                            </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz9-ec-6MQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz9-ec-6MQ">
                                             <rect key="frame" x="293" y="11" width="307" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -240,8 +260,30 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="mz9-ec-6MQ" secondAttribute="trailing" id="8Gi-cO-M18"/>
+                                        <constraint firstItem="a25-C5-hfn" firstAttribute="top" secondItem="ADq-MB-uzC" secondAttribute="top" constant="10" id="3kk-KY-dbk"/>
+                                        <constraint firstItem="a25-C5-hfn" firstAttribute="centerY" secondItem="ADq-MB-uzC" secondAttribute="centerY" id="IMB-8s-DDe"/>
+                                        <constraint firstItem="mz9-ec-6MQ" firstAttribute="top" secondItem="ADq-MB-uzC" secondAttribute="top" constant="10" id="Rex-Fh-1uL"/>
+                                        <constraint firstItem="a25-C5-hfn" firstAttribute="leading" secondItem="ADq-MB-uzC" secondAttribute="leadingMargin" constant="18" id="YSH-Ft-65r"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mz9-ec-6MQ" secondAttribute="trailing" constant="2" id="dPc-2Y-nZq"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="3kk-KY-dbk"/>
+                                            <exclude reference="IMB-8s-DDe"/>
+                                            <exclude reference="YSH-Ft-65r"/>
+                                            <exclude reference="Rex-Fh-1uL"/>
+                                            <exclude reference="dPc-2Y-nZq"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="3kk-KY-dbk"/>
+                                            <include reference="IMB-8s-DDe"/>
+                                            <include reference="YSH-Ft-65r"/>
+                                            <include reference="Rex-Fh-1uL"/>
+                                            <include reference="dPc-2Y-nZq"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="infoLabel" destination="mz9-ec-6MQ" id="lhR-E4-GoA"/>
@@ -262,7 +304,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wje-SM-FJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608" y="1037"/>
+            <point key="canvasLocation" x="2607" y="1037"/>
         </scene>
         <!--Item-->
         <scene sceneID="ntf-sM-nUt">

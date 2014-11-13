@@ -11,7 +11,6 @@
 		A91A5DDE1A0F2873009D2230 /* WDIDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DDD1A0F2873009D2230 /* WDIDCategory.m */; };
 		A91A5DE11A0F2C23009D2230 /* WDIDProvidersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */; };
 		A91A5DED1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DEC1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m */; };
-		A91A5DF11A0FECE3009D2230 /* WDIDProviderLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */; };
 		A91A5DF41A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */; };
 		A99715371A06F97400A71F17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715361A06F97400A71F17 /* main.m */; };
 		A997153A1A06F97400A71F17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715391A06F97400A71F17 /* AppDelegate.m */; };
@@ -48,8 +47,6 @@
 		A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProvidersTableViewController.m; sourceTree = "<group>"; };
 		A91A5DEB1A0FDBA1009D2230 /* WDIDProviderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderDetailViewController.h; sourceTree = "<group>"; };
 		A91A5DEC1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProviderDetailViewController.m; sourceTree = "<group>"; };
-		A91A5DEF1A0FECE3009D2230 /* WDIDProviderLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderLocationViewController.h; sourceTree = "<group>"; };
-		A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProviderLocationViewController.m; sourceTree = "<group>"; };
 		A91A5DF21A0FEFC2009D2230 /* WDIDProviderWebPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDProviderWebPageViewController.h; sourceTree = "<group>"; };
 		A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDProviderWebPageViewController.m; sourceTree = "<group>"; };
 		A99715311A06F97400A71F17 /* WhatDoIDoWith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDoIDoWith.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +68,7 @@
 		A99715661A070DAB00A71F17 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		A99715671A070DAB00A71F17 /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		A99715691A070FFD00A71F17 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		A9C090A11A145B4E0067E62E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		A9C8D2EA1A13084000224CAC /* WDIDMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDMapViewController.h; sourceTree = "<group>"; };
 		A9C8D2EB1A13084000224CAC /* WDIDMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDMapViewController.m; sourceTree = "<group>"; };
 		A9C8D2ED1A1308D300224CAC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -115,8 +113,6 @@
 				A91A5DE01A0F2C23009D2230 /* WDIDProvidersTableViewController.m */,
 				A91A5DEB1A0FDBA1009D2230 /* WDIDProviderDetailViewController.h */,
 				A91A5DEC1A0FDBA1009D2230 /* WDIDProviderDetailViewController.m */,
-				A91A5DEF1A0FECE3009D2230 /* WDIDProviderLocationViewController.h */,
-				A91A5DF01A0FECE3009D2230 /* WDIDProviderLocationViewController.m */,
 				A91A5DF21A0FEFC2009D2230 /* WDIDProviderWebPageViewController.h */,
 				A91A5DF31A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m */,
 				A9F825DD1A11BCA000E6AC5E /* WDIDProviderDetailTableViewCell.h */,
@@ -161,8 +157,8 @@
 				A99715661A070DAB00A71F17 /* JSONUtils.h */,
 				A99715671A070DAB00A71F17 /* JSONUtils.m */,
 				A99715711A07157A00A71F17 /* Models */,
-				A9F825E01A11C96200E6AC5E /* UIView+Resize.h */,
-				A9F825E11A11C96200E6AC5E /* UIView+Resize.m */,
+				A9C090A01A145B190067E62E /* Categories */,
+				A9C090A11A145B4E0067E62E /* Constants.h */,
 			);
 			path = WhatDoIDoWith;
 			sourceTree = "<group>";
@@ -203,6 +199,15 @@
 				A9C8D2F01A1309E200224CAC /* WDIDProvider.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A9C090A01A145B190067E62E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A9F825E01A11C96200E6AC5E /* UIView+Resize.h */,
+				A9F825E11A11C96200E6AC5E /* UIView+Resize.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		A9F825DC1A11B01000E6AC5E /* Nibs */ = {
@@ -370,7 +375,6 @@
 				A91A5DF41A0FEFC2009D2230 /* WDIDProviderWebPageViewController.m in Sources */,
 				A91A5DE11A0F2C23009D2230 /* WDIDProvidersTableViewController.m in Sources */,
 				A99715651A07072600A71F17 /* WDIDClient.m in Sources */,
-				A91A5DF11A0FECE3009D2230 /* WDIDProviderLocationViewController.m in Sources */,
 				A99715371A06F97400A71F17 /* main.m in Sources */,
 				A9C8D2EC1A13084000224CAC /* WDIDMapViewController.m in Sources */,
 			);

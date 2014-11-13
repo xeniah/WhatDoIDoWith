@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(listButtonClicked:)];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) { // iOS8+
@@ -69,6 +70,17 @@
         
         [self.mapView addAnnotation:point];
     }
+}
+
+#pragma mark IBActions
+- (IBAction)listButtonClicked:(id)sender
+{
+    [UIView animateWithDuration:1.8 delay:0 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
+      //  self.view.layer.transform = CATransform3DMakeRotation(M_PI,1.0,0.0,0.0);
+        [self.navigationController popViewControllerAnimated:YES];
+    } completion:^(BOOL finished){
+        
+    }];
 }
 
 

@@ -10,6 +10,7 @@
 #import "WDIDProviderDetailTableViewCell.h"
 #import "WDIDProviderWebPageViewController.h"
 #import "UIView+Resize.h"
+#import "Constants.h"
 
 @interface WDIDProviderDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *tableViewHeader;
@@ -20,34 +21,34 @@
 @end
 
 
-#define HOURS_INDEX             0
+#define PHONE_INDEX             0
 #define ADDRESS_INDEX           1
 #define CITY_INDEX              2
 #define ZIPCODE_INDEX           3
-#define DESCRIPTION_INDEX       4
-#define RESTRICTIONS_INDEX      5
+#define WEBPAGE_INDEX           4
 #define FEE_INDEX               6
 #define VIEW_ON_MAP_INDEX       7
-#define WEBPAGE_INDEX           8
-
+#define HOURS_INDEX             10
 
 @implementation WDIDProviderDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = self.provider.providerName;
-    self.providerDetailTitles = @[@"Hours", @"Address", @"City", @"Zipcode", @"Description", @"Restrictions", @"Fee", @"View On Map", @"Go to Webpage"];
+    self.title = @"Provider Details";
+    self.providerDetailTitles = @[@"Phone", @"Address", @"City", @"Zipcode", @"Go to Webpage"];
     self.providerNameLabel.text = self.provider.providerName;
+    self.providerNameLabel.textColor = [UIColor whiteColor];
     self.providerServiceDescriptionLabel.text = self.provider.providerServiceDescription;
+    self.providerServiceDescriptionLabel.textColor = [UIColor whiteColor];
+    self.tableViewHeader.backgroundColor = SALAD_GREEN_BG;
    
     [UIView animateWithDuration:0.35 animations:^{
          [self.providerServiceDescriptionLabel sizeToFit];
+         [self.providerNameLabel sizeToFit];
          [self.tableViewHeader resizeToFitSubviews];
      }];
     self.tableView.tableHeaderView = self.tableViewHeader;
-   
-   // [self.tableView registerClass:[ProviderDetailTableViewCell class] forCellReuseIdentifier:@"providerDetailCell"]; // TODO
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,15 +67,16 @@
     return self.providerDetailTitles.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WDIDProviderDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"providerDetailCell" forIndexPath:indexPath];
     
-    //cell.textLabel.text = self.providerDetailTitles[indexPath.row];
     cell.titleLabel.text = self.providerDetailTitles[indexPath.row];
     NSString *infoText;
    
     switch (indexPath.row) {
+        case PHONE_INDEX:
+            infoText = self.provider.providerPhoneNumber;
+            break;
             case HOURS_INDEX:
             infoText = self.provider.providerHours;
             break;
@@ -87,12 +89,6 @@
             case ZIPCODE_INDEX:
             infoText = self.provider.providerZip;
             break;
-            case DESCRIPTION_INDEX:
-            infoText = self.provider.providerHours;
-            break;
-            case RESTRICTIONS_INDEX:
-            infoText = self.provider.providerRestrictions;
-            break;
             case FEE_INDEX:
             infoText = self.provider.providerFee;
             break;
@@ -102,14 +98,14 @@
             break;
     }
     cell.infoLabel.text = infoText;
-
+    
     return cell;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if(indexPath.row == 8 && self.provider.providerURL!= nil && self.provider.providerURL.length > 0) // TODO
+    if(indexPath.row == WEBPAGE_INDEX && self.provider.providerURL!= nil && self.provider.providerURL.length > 0) // TODO
     {
         UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         WDIDProviderWebPageViewController* webPageController = [sb instantiateViewControllerWithIdentifier:@"WDIDProviderWebPageViewController"];

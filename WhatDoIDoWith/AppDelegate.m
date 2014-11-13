@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "WDIDCategory.h"
 #import "WDIDProvider.h"
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [[UINavigationBar appearance] setBarTintColor:SALAD_GREEN_BG];
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     return YES;
 }
 
