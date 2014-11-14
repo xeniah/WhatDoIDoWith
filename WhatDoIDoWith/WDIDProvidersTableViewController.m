@@ -10,6 +10,9 @@
 #import "WDIDProviderDetailViewController.h"
 #import "WDIDMapViewController.h"
 #import "WDIDProvider.h"
+
+#define PROVIDER_CELL       @"providerCell"
+
 @interface WDIDProvidersTableViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *showMapButton;
 @property (nonatomic, strong) WDIDProvider *selectedProvider;
@@ -21,7 +24,7 @@
     [super viewDidLoad];
     self.title = @"Providers";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:@selector(showMapButtonClicked:)];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"providerCell"]; //TODO
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:PROVIDER_CELL];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +45,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"providerCell" forIndexPath:indexPath]; //TODO
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PROVIDER_CELL forIndexPath:indexPath]; //TODO
     WDIDProvider *provider = self.providers[indexPath.row];
     cell.textLabel.text = provider.providerName;
     return cell;
@@ -54,6 +57,7 @@
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     WDIDProviderDetailViewController* detail = [sb instantiateViewControllerWithIdentifier:@"WDIDProviderDetailViewController"];
     detail.provider = self.selectedProvider;
+    
     [self.navigationController pushViewController:detail animated:YES];
 }
 
@@ -61,6 +65,14 @@
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     WDIDMapViewController* mapController = [sb instantiateViewControllerWithIdentifier:@"WDIDMapViewController"];
     mapController.providers = self.providers;
+    
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.4;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromTop;
+    [self.navigationController.view.layer addAnimation:transition forKey:@"SlideUp"];
+    
     [self.navigationController pushViewController:mapController animated:YES];
 
 }

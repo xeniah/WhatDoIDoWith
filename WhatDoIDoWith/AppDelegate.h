@@ -28,8 +28,7 @@
 - (id)fetch:(NSString *)type orCreate:(BOOL)create withEntityId:(NSString *)entityId;
 - (void)remove:(NSManagedObject *)entity;
 
-//- (NSArray *)fetchMultiple:(NSString *)type withPredicate:(NSPredicate *)pred;
-- (NSArray *)fetchMultiple:(NSString *)type withPredicate:(NSPredicate *)pred withSort:(NSSortDescriptor *)sort;
+- (NSArray *)fetchMultiple:(NSString *)type withPredicate:(NSPredicate *)pred sort:(NSSortDescriptor *)sort;
 
 
 @end

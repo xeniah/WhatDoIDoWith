@@ -22,7 +22,6 @@
 		A99715621A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715611A06FC9F00A71F17 /* WDIDCategoriesTableViewController.m */; };
 		A99715651A07072600A71F17 /* WDIDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715641A07072600A71F17 /* WDIDClient.m */; };
 		A99715681A070DAB00A71F17 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A99715671A070DAB00A71F17 /* JSONUtils.m */; };
-		A997156A1A070FFD00A71F17 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = A99715691A070FFD00A71F17 /* categories.json */; };
 		A9C8D2EC1A13084000224CAC /* WDIDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D2EB1A13084000224CAC /* WDIDMapViewController.m */; };
 		A9C8D2EE1A1308D300224CAC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D2ED1A1308D300224CAC /* MapKit.framework */; };
 		A9C8D2F11A1309E200224CAC /* WDIDProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D2F01A1309E200224CAC /* WDIDProvider.m */; };
@@ -67,7 +66,6 @@
 		A99715641A07072600A71F17 /* WDIDClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDClient.m; sourceTree = "<group>"; };
 		A99715661A070DAB00A71F17 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		A99715671A070DAB00A71F17 /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
-		A99715691A070FFD00A71F17 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		A9C090A11A145B4E0067E62E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		A9C8D2EA1A13084000224CAC /* WDIDMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDIDMapViewController.h; sourceTree = "<group>"; };
 		A9C8D2EB1A13084000224CAC /* WDIDMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDIDMapViewController.m; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 			children = (
 				A99715351A06F97400A71F17 /* Info.plist */,
 				A99715361A06F97400A71F17 /* main.m */,
-				A99715691A070FFD00A71F17 /* categories.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -310,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99715461A06F97400A71F17 /* Main.storyboard in Resources */,
-				A997156A1A070FFD00A71F17 /* categories.json in Resources */,
 				A997154B1A06F97400A71F17 /* LaunchScreen.xib in Resources */,
 				A99715481A06F97400A71F17 /* Images.xcassets in Resources */,
 			);

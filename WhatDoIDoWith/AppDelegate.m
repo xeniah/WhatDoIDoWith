@@ -129,7 +129,6 @@
     }
 }
 
-// TODO: generalize
 #pragma mark - Core Data utils
 - (id)fetch:(NSString *)type orCreate:(BOOL)create withEntityId:(NSString *)entityId{
     id aManagedObject;
@@ -165,11 +164,8 @@
     [[self managedObjectContext] deleteObject:entity];
 }
 
-- (NSArray *)fetchMultiple:(NSString *)type withPredicate:(NSPredicate *)pred {
-    return [self fetchMultiple:type withPredicate:pred withSort:nil];
-}
 
-- (NSArray *)fetchMultiple:(NSString *)type withPredicate:(NSPredicate *)pred withSort:(NSSortDescriptor *)sort {
+- (NSArray *)fetchMultiple:(NSString *)type withPredicate:(NSPredicate *)pred sort:(NSSortDescriptor *)sort {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:type];
     if (pred)
         [fetchRequest setPredicate:pred];

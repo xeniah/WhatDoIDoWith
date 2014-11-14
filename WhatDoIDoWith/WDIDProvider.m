@@ -2,7 +2,7 @@
 //  WDIDProvider.m
 //  WhatDoIDoWith
 //
-//  Created by Pugetworks on 11/11/14.
+//  Created by XeniaH on 11/11/14.
 //  Copyright (c) 2014 xeniah. All rights reserved.
 //
 

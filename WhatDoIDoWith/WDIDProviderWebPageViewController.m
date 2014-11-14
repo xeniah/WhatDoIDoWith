@@ -2,7 +2,7 @@
 //  WDIDProviderWebPageViewController.m
 //  WhatDoIDoWith
 //
-//  Created by Pugetworks on 11/9/14.
+//  Created by XeniaH on 11/9/14.
 //  Copyright (c) 2014 xeniah. All rights reserved.
 //
 
@@ -39,7 +39,10 @@
 - (void)webView:(UIWebView *)aWebView didFailLoadWithError:(NSError *)error
 {
     [MBProgressHUD hideAllHUDsForView:self.webView animated:YES];
-    //ToDO
+    //TODO
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Webpage could not be loaded" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    
 }
 
 

@@ -13,6 +13,7 @@
 #import "WDIDCategory.h"
 #import "WDIDClient.h"
 #import "WDIDProvider.h"
+#import "Constants.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
 @interface WDIDCategoriesTableViewController ()
@@ -32,14 +33,14 @@
     
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"categoryName" ascending:YES];
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    self.wdidCategories = [delegate fetchMultiple:WDIDCATEGORY_TYPE withPredicate:nil withSort:sort];
+    self.wdidCategories = [delegate fetchMultiple:WDIDCATEGORY_TYPE withPredicate:nil sort:sort];
     
     if (self.wdidCategories.count == 0) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [[WDIDClient sharedClient] getJson:@"https://data.kingcounty.gov/api/views/zqwi-c5q3/rows.json" parameters:nil success:^(id JSON) {
+        [[WDIDClient sharedClient] getJson:DATA_URL parameters:nil success:^(id JSON) {
             
             [[JSONUtils sharedJSONUtils] processJSONProviders:JSON];
-            self.wdidCategories = [delegate fetchMultiple:WDIDCATEGORY_TYPE withPredicate:nil withSort:sort];
+            self.wdidCategories = [delegate fetchMultiple:WDIDCATEGORY_TYPE withPredicate:nil sort:sort];
             [self.tableView reloadData];
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [self setupSearch];

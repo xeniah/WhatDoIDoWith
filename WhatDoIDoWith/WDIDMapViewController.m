@@ -2,7 +2,7 @@
 //  WDIDMapViewController.m
 //  WhatDoIDoWith
 //
-//  Created by Pugetworks on 11/11/14.
+//  Created by XeniaH on 11/11/14.
 //  Copyright (c) 2014 xeniah. All rights reserved.
 //
 
@@ -20,19 +20,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:@selector(listButtonClicked:)];
+    
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6514, -122.3509);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate,10000, 10000);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) { // iOS8+
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [[UIApplication sharedApplication] sendAction:@selector(requestWhenInUseAuthorization)
                                                    to:self.locationManager
                                                  from:self
                                              forEvent:nil];
     }
-   
-    for(WDIDProvider *provider in self.providers)
-    {
-        NSLog(@"%f, %f", [provider.latitude doubleValue], [provider.longitude doubleValue]);
-    }
+
     self.mapView.delegate = self;
     
 }
@@ -54,6 +56,7 @@
 
 
 #pragma mark MKMapViewCandidate
+
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate,10000, 10000);
@@ -75,12 +78,14 @@
 #pragma mark IBActions
 - (IBAction)listButtonClicked:(id)sender
 {
-    [UIView animateWithDuration:1.8 delay:0 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
-      //  self.view.layer.transform = CATransform3DMakeRotation(M_PI,1.0,0.0,0.0);
-        [self.navigationController popViewControllerAnimated:YES];
-    } completion:^(BOOL finished){
-        
-    }];
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.4;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    transition.type = kCATransitionReveal;
+    transition.subtype = kCATransitionFromBottom;
+    [self.navigationController.view.layer addAnimation:transition forKey:@"SlideDown"];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

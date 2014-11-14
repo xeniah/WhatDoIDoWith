@@ -2,7 +2,7 @@
 //  WDIDProviderDetailViewController.m
 //  WhatDoIDoWith
 //
-//  Created by Pugetworks on 11/9/14.
+//  Created by XeniaH on 11/9/14.
 //  Copyright (c) 2014 xeniah. All rights reserved.
 //
 
@@ -105,7 +105,7 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if(indexPath.row == WEBPAGE_INDEX && self.provider.providerURL!= nil && self.provider.providerURL.length > 0) // TODO
+    if(indexPath.row == WEBPAGE_INDEX && self.provider.providerURL!= nil && self.provider.providerURL.length > 0)
     {
         UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         WDIDProviderWebPageViewController* webPageController = [sb instantiateViewControllerWithIdentifier:@"WDIDProviderWebPageViewController"];

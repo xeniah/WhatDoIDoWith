@@ -2,7 +2,7 @@
 //  UIView+Resize.m
 //  WhatDoIDoWith
 //
-//  Created by Pugetworks on 11/10/14.
+//  Created by XeniaH on 11/10/14.
 //  Copyright (c) 2014 xeniah. All rights reserved.
 //
 
