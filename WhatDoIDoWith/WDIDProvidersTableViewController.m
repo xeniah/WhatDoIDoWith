@@ -8,10 +8,11 @@
 
 #import "WDIDProvidersTableViewController.h"
 #import "WDIDProviderDetailViewController.h"
+#import "WDIDProvidersTableViewCell.h"
 #import "WDIDMapViewController.h"
 #import "WDIDProvider.h"
 
-#define PROVIDER_CELL       @"providerCell"
+#define PROVIDER_CELL       @"WDIDProvidersTableViewCell"
 
 @interface WDIDProvidersTableViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *showMapButton;
@@ -24,7 +25,15 @@
     [super viewDidLoad];
     self.title = @"Providers";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:@selector(showMapButtonClicked:)];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:PROVIDER_CELL];
+    self.tableView.estimatedRowHeight = 68.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    // no need to register when using a prototype cell
+  //  [self.tableView registerClass:[WDIDProvidersTableViewCell class] forCellReuseIdentifier:PROVIDER_CELL];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+     [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,9 +54,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PROVIDER_CELL forIndexPath:indexPath]; //TODO
+    WDIDProvidersTableViewCell *cell = (WDIDProvidersTableViewCell *)[tableView dequeueReusableCellWithIdentifier:PROVIDER_CELL forIndexPath:indexPath];
     WDIDProvider *provider = self.providers[indexPath.row];
-    cell.textLabel.text = provider.providerName;
+    cell.providerNameLabel.text = provider.providerName;
+    cell.additionalInfoLabel.text = provider.providerURL;
+    
     return cell;
 }
 

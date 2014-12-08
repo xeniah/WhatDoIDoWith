@@ -50,18 +50,79 @@
         <!--Providers Table View Controller-->
         <scene sceneID="YaK-As-oWw">
             <objects>
-                <tableViewController id="MAw-J3-U8U" customClass="WDIDProvidersTableViewController" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="WDIDProvidersTableViewController" storyboardIdentifier="WDIDProvidersTableViewController" id="MAw-J3-U8U" customClass="WDIDProvidersTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KOJ-0R-bed">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e56-fK-EqX">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="WDIDProvidersTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="WDIDProvidersTableViewCell" id="e56-fK-EqX" customClass="WDIDProvidersTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e56-fK-EqX" id="IS6-cP-jhm">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-fh-rvn">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="21"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-22-FO7">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                <rect key="frame" x="0.0" y="23" width="405" height="21"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bLo-22-FO7" firstAttribute="top" secondItem="bPO-fh-rvn" secondAttribute="bottom" constant="2" id="6uj-V7-hTm"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bLo-22-FO7" secondAttribute="bottom" constant="2.5" id="9Qt-iZ-uYC"/>
+                                        <constraint firstItem="bLo-22-FO7" firstAttribute="leading" secondItem="IS6-cP-jhm" secondAttribute="leadingMargin" constant="4" id="Aye-St-mfV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bPO-fh-rvn" secondAttribute="trailing" constant="4" id="Urh-v8-p5f"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bLo-22-FO7" secondAttribute="trailing" constant="4" id="aGt-UC-wcM"/>
+                                        <constraint firstItem="bPO-fh-rvn" firstAttribute="top" secondItem="IS6-cP-jhm" secondAttribute="topMargin" id="v7C-Rc-NCE"/>
+                                        <constraint firstItem="bPO-fh-rvn" firstAttribute="leading" secondItem="IS6-cP-jhm" secondAttribute="leadingMargin" constant="4" id="y6A-xX-CaC"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="bPO-fh-rvn"/>
+                                            <exclude reference="bLo-22-FO7"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="Urh-v8-p5f"/>
+                                            <exclude reference="v7C-Rc-NCE"/>
+                                            <exclude reference="y6A-xX-CaC"/>
+                                            <exclude reference="6uj-V7-hTm"/>
+                                            <exclude reference="9Qt-iZ-uYC"/>
+                                            <exclude reference="Aye-St-mfV"/>
+                                            <exclude reference="aGt-UC-wcM"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="bPO-fh-rvn"/>
+                                            <include reference="bLo-22-FO7"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="Urh-v8-p5f"/>
+                                            <include reference="v7C-Rc-NCE"/>
+                                            <include reference="y6A-xX-CaC"/>
+                                            <include reference="6uj-V7-hTm"/>
+                                            <include reference="9Qt-iZ-uYC"/>
+                                            <include reference="Aye-St-mfV"/>
+                                            <include reference="aGt-UC-wcM"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="additionalInfoLabel" destination="bLo-22-FO7" id="Dfw-wH-Ljz"/>
+                                    <outlet property="providerNameLabel" destination="bPO-fh-rvn" id="iAS-nN-k2Y"/>
                                     <segue destination="eBJ-kT-tzJ" kind="showDetail" identifier="showProviderDetail" id="Fja-vn-FGx"/>
                                 </connections>
                             </tableViewCell>
@@ -195,7 +256,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="saA-L9-IZu">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="saA-L9-IZu">
                                     <rect key="frame" x="0.0" y="2" width="600" height="26"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,7 +265,7 @@
                                         <rect key="frame" x="5" y="0.0" width="390" height="52.5"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Service Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-e5-FuY">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Service Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-e5-FuY">
                                     <rect key="frame" x="140" y="31" width="320" height="42"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -231,7 +292,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1nk-2z-DjB" id="ADq-MB-uzC">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a25-C5-hfn">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a25-C5-hfn">
                                             <rect key="frame" x="26" y="11" width="117" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="117" id="M7C-XE-CiQ">

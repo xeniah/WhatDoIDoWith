@@ -94,14 +94,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     CATransition *animation = [CATransition animation];
     [animation setType:kCATransitionFade];
     [animation setDuration:0.8];
     [animation setTimingFunction:[CAMediaTimingFunction functionWithName:
                                   kCAMediaTimingFunctionEaseIn]];
     [self.view.window.layer addAnimation:animation forKey:@"fadeOut"];
-    
     [self performSegueWithIdentifier:@"showProviders" sender:self];
 }
 
