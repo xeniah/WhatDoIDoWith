@@ -38,15 +38,17 @@
     self.title = @"Provider Details";
     self.providerDetailTitles = @[@"Phone", @"Address", @"City", @"Zipcode", @"Go to Webpage"];
     self.providerNameLabel.text = self.provider.providerName;
+    self.providerNameLabel.preferredMaxLayoutWidth = self.providerNameLabel.frame.size.width;
     self.providerNameLabel.textColor = [UIColor whiteColor];
     self.providerServiceDescriptionLabel.text = self.provider.providerServiceDescription;
     self.providerServiceDescriptionLabel.textColor = [UIColor whiteColor];
+    self.providerServiceDescriptionLabel.preferredMaxLayoutWidth = self.providerServiceDescriptionLabel.frame.size.width;
     self.tableViewHeader.backgroundColor = SALAD_GREEN_BG;
-   
+       
     [UIView animateWithDuration:0.35 animations:^{
          [self.providerServiceDescriptionLabel sizeToFit];
          [self.providerNameLabel sizeToFit];
-         [self.tableViewHeader resizeToFitSubviews];
+        [self.tableViewHeader resizeToFitSubviews];
      }];
     self.tableView.tableHeaderView = self.tableViewHeader;
 }

@@ -16,7 +16,6 @@
 
 @interface WDIDProvidersTableViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *showMapButton;
-@property (nonatomic, strong) WDIDProvider *selectedProvider;
 @end
 
 @implementation WDIDProvidersTableViewController
@@ -62,14 +61,13 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.selectedProvider = self.providers[indexPath.row];
-    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    WDIDProviderDetailViewController* detail = [sb instantiateViewControllerWithIdentifier:@"WDIDProviderDetailViewController"];
-    detail.provider = self.selectedProvider;
-    
-    [self.navigationController pushViewController:detail animated:YES];
+    if ([[segue identifier] isEqualToString:@"showProviderDetail"]) {
+        WDIDProviderDetailViewController *detail = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        detail.provider = [self.providers objectAtIndex:indexPath.row];
+    }
 }
 
 - (IBAction)showMapButtonClicked:(id)sender {

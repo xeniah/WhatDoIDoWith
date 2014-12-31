@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -63,7 +64,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-fh-rvn">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
@@ -95,13 +96,13 @@
                                             <exclude reference="bLo-22-FO7"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="Urh-v8-p5f"/>
-                                            <exclude reference="v7C-Rc-NCE"/>
-                                            <exclude reference="y6A-xX-CaC"/>
                                             <exclude reference="6uj-V7-hTm"/>
                                             <exclude reference="9Qt-iZ-uYC"/>
                                             <exclude reference="Aye-St-mfV"/>
                                             <exclude reference="aGt-UC-wcM"/>
+                                            <exclude reference="Urh-v8-p5f"/>
+                                            <exclude reference="v7C-Rc-NCE"/>
+                                            <exclude reference="y6A-xX-CaC"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -110,20 +111,20 @@
                                             <include reference="bLo-22-FO7"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="Urh-v8-p5f"/>
-                                            <include reference="v7C-Rc-NCE"/>
-                                            <include reference="y6A-xX-CaC"/>
                                             <include reference="6uj-V7-hTm"/>
                                             <include reference="9Qt-iZ-uYC"/>
                                             <include reference="Aye-St-mfV"/>
                                             <include reference="aGt-UC-wcM"/>
+                                            <include reference="Urh-v8-p5f"/>
+                                            <include reference="v7C-Rc-NCE"/>
+                                            <include reference="y6A-xX-CaC"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="additionalInfoLabel" destination="bLo-22-FO7" id="Dfw-wH-Ljz"/>
                                     <outlet property="providerNameLabel" destination="bPO-fh-rvn" id="iAS-nN-k2Y"/>
-                                    <segue destination="eBJ-kT-tzJ" kind="showDetail" identifier="showProviderDetail" id="Fja-vn-FGx"/>
+                                    <segue destination="eBJ-kT-tzJ" kind="show" identifier="showProviderDetail" id="wyz-O1-N63"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -252,39 +253,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" id="AfZ-8z-2uJ">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="saA-L9-IZu">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="saA-L9-IZu">
                                     <rect key="frame" x="0.0" y="2" width="600" height="26"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
-                                    <variation key="widthClass=compact" misplaced="YES">
-                                        <rect key="frame" x="5" y="0.0" width="390" height="52.5"/>
+                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <rect key="frame" x="5" y="0.0" width="390" height="65.5"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Service Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-e5-FuY">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Service Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-e5-FuY">
                                     <rect key="frame" x="140" y="31" width="320" height="42"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
-                                    <variation key="widthClass=compact" misplaced="YES">
-                                        <rect key="frame" x="5" y="47" width="390" height="27"/>
+                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <rect key="frame" x="5" y="47" width="390" height="47"/>
                                     </variation>
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="saA-L9-IZu" firstAttribute="top" secondItem="AfZ-8z-2uJ" secondAttribute="top" constant="4" id="Ad1-GH-BB5"/>
-                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uwk-e5-FuY" secondAttribute="bottom" id="HXX-fY-ME7"/>
-                                <constraint firstAttribute="trailing" secondItem="uwk-e5-FuY" secondAttribute="trailing" constant="5" id="RHB-fS-l8Y"/>
-                                <constraint firstItem="uwk-e5-FuY" firstAttribute="top" secondItem="saA-L9-IZu" secondAttribute="bottom" constant="4" id="WZy-x8-pXS"/>
-                                <constraint firstItem="uwk-e5-FuY" firstAttribute="leading" secondItem="AfZ-8z-2uJ" secondAttribute="leading" constant="5" id="ae1-DL-66v"/>
-                                <constraint firstAttribute="trailing" secondItem="saA-L9-IZu" secondAttribute="trailing" constant="5" id="hko-Ni-N7i"/>
-                                <constraint firstAttribute="bottom" secondItem="uwk-e5-FuY" secondAttribute="bottom" constant="5" id="sh3-9M-rfd"/>
-                                <constraint firstItem="saA-L9-IZu" firstAttribute="leading" secondItem="AfZ-8z-2uJ" secondAttribute="leading" constant="5" id="shr-xw-hnF"/>
+                                <constraint firstItem="uwk-e5-FuY" firstAttribute="leading" secondItem="AfZ-8z-2uJ" secondAttribute="leading" constant="5" id="3bk-ov-DQU"/>
+                                <constraint firstAttribute="trailing" secondItem="uwk-e5-FuY" secondAttribute="trailing" constant="5" id="CeH-eU-FSU"/>
+                                <constraint firstItem="saA-L9-IZu" firstAttribute="leading" secondItem="AfZ-8z-2uJ" secondAttribute="leading" constant="5" id="bok-1y-5Zk"/>
+                                <constraint firstAttribute="trailing" secondItem="saA-L9-IZu" secondAttribute="trailing" constant="5" id="o5P-gw-RfV"/>
+                                <constraint firstItem="uwk-e5-FuY" firstAttribute="top" secondItem="saA-L9-IZu" secondAttribute="bottom" constant="8" id="qON-mb-3er"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="bok-1y-5Zk"/>
+                                    <exclude reference="o5P-gw-RfV"/>
+                                    <exclude reference="3bk-ov-DQU"/>
+                                    <exclude reference="CeH-eU-FSU"/>
+                                    <exclude reference="qON-mb-3er"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="bok-1y-5Zk"/>
+                                    <include reference="o5P-gw-RfV"/>
+                                    <include reference="3bk-ov-DQU"/>
+                                    <include reference="CeH-eU-FSU"/>
+                                    <include reference="qON-mb-3er"/>
+                                </mask>
+                            </variation>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="ProviderDetailTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="providerDetailCell" id="1nk-2z-DjB" customClass="WDIDProviderDetailTableViewCell">

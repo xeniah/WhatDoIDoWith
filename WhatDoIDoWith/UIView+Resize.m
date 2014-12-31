@@ -16,9 +16,9 @@
     float h = 0;
     for (UIView *v in self.subviews) {
         float fw = v.frame.origin.x + v.frame.size.width;
-        float fh = v.frame.origin.y + v.frame.size.height;
         w = MAX(fw, w);
-        h = MAX(fh, h);
+        h += v.frame.size.height + 5;
+        NSLog(@"%f", v.frame.size.height);
     }
     [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, w, h)];
 }
